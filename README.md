@@ -1,7 +1,7 @@
-local ArrayField = loadstring(game:HttpGet('https://raw.githubusercontent.com/UI-Interface/ArrayField/main/Source.lua'))()
+local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
  -- Primeira notificação - Menu carregando
-ArrayField:Notify({
+ Rayfield:Notify({
     Title = "Loading...",
     Content = "The menu is loading. Please wait...",
     Duration = 5, -- Duração de 5 segundos
@@ -20,7 +20,7 @@ ArrayField:Notify({
 task.wait(5)  -- Aguarda 5 segundos até que a primeira notificação desapareça
 
 -- Notificação de BETA
-ArrayField:Notify({
+Rayfield:Notify({
     Title = "Moon Hub (V1.4.0)",
     Content = "Thank you for choosing us!",
     Duration = 5, -- Duração de 5 segundos
@@ -35,10 +35,16 @@ ArrayField:Notify({
     },
 })
 
-local Window = ArrayField:CreateWindow({
+local Window = Rayfield:CreateWindow({
     Name = "Moon HUB",
+    Icon = 4483362458,
     LoadingTitle = "Premium HUB",
     LoadingSubtitle = "by lk_.12",
+    Theme = "Default",
+
+    DisableRayfieldPrompts = false,
+    DisableBuildWarnings = false,
+
     ConfigurationSaving = {
         Enabled = true,
         FolderName = nil,
@@ -63,7 +69,7 @@ local Window = ArrayField:CreateWindow({
                 Text = 'Click here to copy the discord link (Mandatory) <--',
                 OnPress = function()
                     setclipboard("https://discord.gg/4VZtWGmp4g")
-                    ArrayField:Notify({
+                    Rayfield:Notify({
                         Title = "🔗 Discord Copied",
                         Content = "The Discord link has been copied to your clipboard!",
                         Duration = 5,
@@ -124,7 +130,7 @@ SectionMisc:CreateToggle({
         -- Ativar ou desativar o Free Radio
         if state then
             game.Players.LocalPlayer.PlayerGui.DRadio_Gui.Enabled = true
-            ArrayField:Notify({
+            Rayfield:Notify({
                 Title = "🎵 Free Radio Activated!",
                 Content = "Free Radio has been activated!",
                 Duration = 5,
@@ -132,7 +138,7 @@ SectionMisc:CreateToggle({
             })
         else
             game.Players.LocalPlayer.PlayerGui.DRadio_Gui.Enabled = false
-            ArrayField:Notify({
+            Rayfield:Notify({
                 Title = "🎵 Free Radio Deactivated",
                 Content = "Free Radio has been deactivated!",
                 Duration = 5,
@@ -152,7 +158,7 @@ SectionMisc:CreateToggle({
         if state then
             game.Players.LocalPlayer.PlayerGui.LevelBar.gamepassText.Visible = true
             game.Players.LocalPlayer.PlayerGui.LevelBar.gamepassText.Text = "13x exp"
-            ArrayField:Notify({
+            Rayfield:Notify({
                 Title = "🧬 Free 13x Exp activated",
                 Content = "13x Exp has been activated!",
                 Duration = 5,
@@ -160,7 +166,7 @@ SectionMisc:CreateToggle({
             })
         else
             game.Players.LocalPlayer.PlayerGui.LevelBar.gamepassText.Visible = false
-            ArrayField:Notify({
+            Rayfield:Notify({
                 Title = "🧬 Free 13x Exp deactivated",
                 Content = "13x Exp has been deactivated!",
                 Duration = 5,
@@ -176,7 +182,7 @@ SectionScripts:CreateButton({
         -- Carrega e executa o script
         loadstring(game:HttpGet('https://raw.githubusercontent.com/nick0022/moonyield/main/README.md', true))()
         -- Exibe uma notificação usando Rayfield
-        ArrayField:Notify({
+        Rayfield:Notify({
             Title = "💻 Moon Yield",
             Content = "The Moon Yield has been executed!", -- Corrigido o texto da mensagem
             Duration = 5, -- Tempo da notificação em segundos
@@ -208,7 +214,7 @@ SectionTeleports:CreateButton({
         local targetPosition = Vector3.new(-105.29137420654297, 642.4719848632812, 514.2374877929688) -- Coordenadas da Safe Zone
         if game.Players.LocalPlayer.Character and game.Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart") then
             game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(targetPosition)
-            ArrayField:Notify({
+            Rayfield:Notify({
                 Title = "🛡️ Safe Zone",
                 Content = "You have been teleported successfully!",
                 Duration = 5,
@@ -224,7 +230,7 @@ SectionTeleports:CreateButton({
         local targetPosition = Vector3.new(-672.6334838867188, 642.568603515625, 1115.691162109375) -- Coordenadas do Desert
         if game.Players.LocalPlayer.Character and game.Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart") then
             game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(targetPosition)
-            ArrayField:Notify({
+            Rayfield:Notify({
                 Title = "🏜️ Desert",
                 Content = "You have been teleported successfully!",
                 Duration = 5,
@@ -240,7 +246,7 @@ SectionTeleports:CreateButton({
         local targetPosition = Vector3.new(120.21180725097656, 685.631103515625, 1570.7666015625) -- Coordenadas do Volcano
         if game.Players.LocalPlayer.Character and game.Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart") then
             game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(targetPosition)
-            ArrayField:Notify({
+            Rayfield:Notify({
                 Title = "🌋 Volcano",
                 Content = "You have been teleported successfully!",
                 Duration = 5,
@@ -256,7 +262,7 @@ SectionTeleports:CreateButton({
         local targetPosition = Vector3.new(-29.751022338867188, 644.6039428710938, -70.5428695678711) -- Coordenadas da Beach
         if game.Players.LocalPlayer.Character and game.Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart") then
             game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(targetPosition)
-            ArrayField:Notify({
+            Rayfield:Notify({
                 Title = "🏖️ Beach",
                 Content = "You have been teleported successfully!",
                 Duration = 5,
@@ -272,7 +278,7 @@ SectionTeleports:CreateButton({
         local targetPosition = Vector3.new(-1173.7010498046875, 1268.14404296875, 766.4228515625) -- Coordenadas do Cloud Arena
         if game.Players.LocalPlayer.Character and game.Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart") then
             game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(targetPosition)
-            ArrayField:Notify({
+            Rayfield:Notify({
                 Title = "☁️ Cloud Arena",
                 Content = "You have been teleported successfully!",
                 Duration = 5,
@@ -304,7 +310,7 @@ SectionFarm:CreateToggle({
         if isFarming then
             task.spawn(coinFarmLoop)
             -- Notificação quando ativado
-            ArrayField:Notify({
+            Rayfield:Notify({
                 Title = "💰 Coin Farm Activated",
                 Content = "Coin Farm has been activated.",
                 Duration = 5, -- Duração de 5 segundos
@@ -320,7 +326,7 @@ SectionFarm:CreateToggle({
             })
         else
             -- Notificação quando desativado
-            ArrayField:Notify({
+            Rayfield:Notify({
                 Title = "💰 Coin Farm Deactivated",
                 Content = "Coin Farm has been deactivated.",
                 Duration = 5, -- Duração de 5 segundos
@@ -380,7 +386,7 @@ SectionFarm:CreateToggle({
                 end
             end)
 
-            ArrayField:Notify({
+            Rayfield:Notify({
                 Title = "👹 Boss Farm Activated",
                 Content = "Boss farming is now active.",
                 Duration = 5,
@@ -396,7 +402,7 @@ SectionFarm:CreateToggle({
                 }
             })
         else
-            ArrayField:Notify({
+            Rayfield:Notify({
                 Title = "👹 Boss Farm Deactivated",
                 Content = "Boss farming has been stopped.",
                 Duration = 5,
@@ -432,7 +438,7 @@ SectionFarm:CreateToggle({
                 end
             end)
             -- Notificação quando ativado
-            ArrayField:Notify({
+            Rayfield:Notify({
                 Title = "🎃 Dummy Farm Activated",
                 Content = "Dummy Farm has been activated.",
                 Duration = 5, -- Duração de 5 segundos
@@ -452,7 +458,7 @@ SectionFarm:CreateToggle({
                 dummyFarmConnection = nil
             end
             -- Notificação quando desativado
-            ArrayField:Notify({
+            Rayfield:Notify({
                 Title = "🎃 Dummy Farm Deactivated",
                 Content = "Dummy Farm has been deactivated.",
                 Duration = 5, -- Duração de 5 segundos
@@ -533,7 +539,7 @@ SectionFarm:CreateToggle({
                 end
             end)
             -- Notificação quando ativado
-            ArrayField:Notify({
+            Rayfield:Notify({
                 Title = "🎃 Dummy 5k Farm Activated",
                 Content = "Dummy 5k Farm has been activated.",
                 Duration = 5, -- Duração de 5 segundos
@@ -549,7 +555,7 @@ SectionFarm:CreateToggle({
             })
         else
             -- Notificação quando desativado
-            ArrayField:Notify({
+            Rayfield:Notify({
                 Title = "🎃 Dummy 5k Farm Deactivated",
                 Content = "Dummy 5k Farm has been deactivated.",
                 Duration = 5, -- Duração de 5 segundos
@@ -618,7 +624,7 @@ SectionPVP:CreateToggle({
             task.spawn(autoEatLoop) -- Inicia o loop de Auto Comer
 
             -- Notificação ao ativar
-            ArrayField:Notify({
+            Rayfield:Notify({
                 Title = "🦐 Auto Eat Activated",
                 Content = "Auto Eat has been activated.",
                 Duration = 5, -- Duração de 5 segundos
@@ -634,7 +640,7 @@ SectionPVP:CreateToggle({
             })
         else
             -- Notificação ao desativar
-            ArrayField:Notify({
+            Rayfield:Notify({
                 Title = "🦐 Auto Eat Deactivated",
                 Content = "Auto Eat has been deactivated.",
                 Duration = 5, -- Duração de 5 segundos
@@ -666,7 +672,7 @@ SectionPVP:CreateToggle({
 
         if _G.killAura then
             -- Notificação ao ativar Kill Aura
-            ArrayField:Notify({
+            Rayfield:Notify({
                 Title = "💥 Kill Aura Activated",
                 Content = "Kill Aura is now active.",
                 Duration = 5, -- Duração de 5 segundos
@@ -702,7 +708,7 @@ SectionPVP:CreateToggle({
             end)
         else
             -- Notificação ao desativar Kill Aura
-            ArrayField:Notify({
+            Rayfield:Notify({
                 Title = "💥 Kill Aura Deactivated",
                 Content = "Kill Aura is now inactive.",
                 Duration = 5, -- Duração de 5 segundos
@@ -732,7 +738,7 @@ SectionSkins:CreateButton({
         local skinEvent = game:GetService("ReplicatedStorage").Events.SkinClickEvent
 
         -- Notification saying the skins have been unlocked
-        ArrayField:Notify({
+        Rayfield:Notify({
             Title = "🎅 Christmas Skins",
             Content = "The Christmas skins have been unlocked.",
             Duration = 5, -- Duration of 5 seconds
@@ -767,7 +773,7 @@ SectionSkins:CreateButton({
         local pigs = {"PIG7", "PIG6", "PIG5", "PIG4", "PIG3", "PIG2", "PIG1", "PIG8"}
 
         -- Notification saying the skins have been unlocked
-        ArrayField:Notify({
+        Rayfield:Notify({
             Title = "🐖 PIG Skins",
             Content = "The PIG skins have been unlocked.",
             Duration = 5, -- Duration of 5 seconds
@@ -812,7 +818,7 @@ SectionCredits:CreateButton({
     Name = "🔗 Copy Discord",
     Callback = function()
         setclipboard("https://discord.gg/xtPvBmWUNh") -- Substitua pelo seu link do Discord
-        ArrayField:Notify({
+        Rayfield:Notify({
             Title = "🔗 Discord Copied",
             Content = "The Discord link has been copied to your clipboard!",
             Duration = 5, -- Duração em segundos
@@ -842,7 +848,7 @@ SectionCredits:CreateButton({
     Name = "🤝 Rankalf",
     Callback = function()
         setclipboard("https://discord.gg/4VZtWGmp4g") -- Substitua pelo seu link do Discord
-        ArrayField:Notify({
+        Rayfield:Notify({
             Title = "🤝 Discord Partner",
             Content = "The Discord Partner link has been copied to your clipboard!",
             Duration = 5, -- Duração em segundos
@@ -872,7 +878,7 @@ SectionCredits:CreateButton({
     Name = "🤝 Rankalf",
     Callback = function()
         setclipboard("https://discord.gg/4VZtWGmp4g") -- Substitua pelo seu link do Discord
-        ArrayField:Notify({
+        Rayfield:Notify({
             Title = "🤝 Discord Partner",
             Content = "The Discord Reseller link has been copied to your clipboard!",
             Duration = 5, -- Duração em segundos
@@ -949,4 +955,4 @@ SectionUpdates:CreateSeparator({
     LineThickness = 2,                        -- Espessura da linha
 })
 
-ArrayField:LoadConfiguration()
+Rayfield:LoadConfiguration()
