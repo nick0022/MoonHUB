@@ -89,20 +89,6 @@ local Window = Rayfield:CreateWindow({
     }
 })
 
-Window:Prompt({
-    Title = 'Terms of use',
-    SubTitle = '',
-    Content = '• Forbidden to sell the key without being a reseller.\n• Forbidden to pass your key to other people\n• Mandatory to be on the official HUB discord\n• By clicking on accept the terms of use and breaking a rule you can lose your key or be blacklisted from the HUB forever',
-    Actions = {
-        Accept = {
-            Name = 'Accept',
-            Callback = function()
-                print('Pressed')
-            end,
-        }
-    }
-})
-
 local Tabcredits = Window:CreateTab("Credits", 4483362458)
 local Tabupdates = Window:CreateTab("Updates", 4483362458)
 local Tabfarm = Window:CreateTab("Farm", 4483362458)
