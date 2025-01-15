@@ -186,13 +186,6 @@ local ForceCarryDropdown = Tabmisc:CreateDropdown({
             local targetPlayer = game:GetService("Players"):FindFirstChild(selectedPlayer)
 
             if targetPlayer and player.Character then
-                -- Etapa 1: Teletransporta para o jogador selecionado
-                local targetHumanoidRootPart = targetPlayer.Character:FindFirstChild("HumanoidRootPart")
-                if targetHumanoidRootPart then
-                    player.Character:PivotTo(targetHumanoidRootPart.CFrame)
-                end
-
-                -- Etapa 2: Força o jogador selecionado a carregar quem usa o script
                 local ohInstance1 = game:GetService("Players")[selectedPlayer]
                 local ohString2 = "request_accepted"
 
