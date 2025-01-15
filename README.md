@@ -193,7 +193,7 @@ local ForceCarryDropdown = Tabmisc:CreateDropdown({
                 end
 
                 -- Etapa 2: Força o jogador selecionado a carregar quem usa o script
-                local ohInstance1 = game:GetService("Players").[selectedPlayer]
+                local ohInstance1 = game:GetService("Players")[selectedPlayer]
                 local ohString2 = "request_accepted"
 
                 game:GetService("ReplicatedStorage").Events.CarryEvent:FireServer(ohInstance1, ohString2)
